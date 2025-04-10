@@ -13,7 +13,7 @@
 <div class="container">
 	<div class="left">
 		<h1 id="player1Name"> Verylongnameforplayer </h1>
-		<h2 id="player1Score" class="score"> 0 </h2>
+		<h2 id="player1Score" class="score" contenteditable = "true"> 0 </h2>
 		<h2> SCORE </h2>
 		<div id="player1Games" class="games">
 			<img class="game" src="2.png">
@@ -26,7 +26,7 @@
 	
 	<div class="right">
 		<h1 id="player2Name"> NAME </h1>
-		<h2 id="player2Score" class="score"> 3 </h2>
+		<h2 id="player2Score" class="score" contenteditable = "true"> 3 </h2>
 		<h2> SCORE </h2>
 		<div id="player2Games" class="games">
 			<img class="game" src="2.png">
@@ -41,23 +41,21 @@
 		<div class="controls">
 		<div class="player">
 			<select id="player1List" class="mySelect" size="8">
-				<option value="Игрок A">Игрок A</option>
-				<option value="Игрок B">Игрок B</option>
+				<option value="Number1RamlethalFan">Number1RamlethalFan</option>
+				<option value="ОпиумныйБабуин">ОпиумныйБабуин</option>
 				<option value="Игрок C">Игрок C</option>
 				<option value="Игрок D">Игрок D</option>
 			</select>
-			<input type="number" id="score1Input" placeholder="Счет 1" min="0">
-			<button onclick="updateNamesAndScores()">Обновить имена и счет</button>
+			<button onclick="updateNamesAndImgs()">Обновить имена</button>
 		</div>
 		
 		<div class="player">
 			<select id="player2List" class="mySelect" size="8">
-				<option value="Игрок A">Игрок A</option>
-				<option value="Игрок B">Игрок B</option>
+				<option value="Number1RamlethalFan">Number1RamlethalFan</option>
+				<option value="ОпиумныйБабуин">ОпиумныйБабуин</option>
 				<option value="Игрок C">Игрок C</option>
 				<option value="Игрок D">Игрок D</option>
 			</select>
-			<input type="number" id="score2Input" placeholder="Счет 2" min="0">
 			<button onclick="swapPlayers()">Поменять местами</button>
 		</div>
 		</div>
