@@ -4,41 +4,67 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<script type="text/javascript" src="script.js"></script>
 	<link href="style.css" rel="stylesheet">
-
 	<title>Оверлей для стрима2</title>
 </head>
 
 <body>
 <div class="container">
 	<div class="left">
-		<h1> Verylongnameforplayer </h1>
-		<h2 class="score"> 0 </h2>
+		<h1 id="player1Name"> Verylongnameforplayer </h1>
+		<h2 id="player1Score" class="score"> 0 </h2>
 		<h2> SCORE </h2>
-		<div class="games">
+		<div id="player1Games" class="games">
 			<img class="game" src="2.png">
 			<img class="game" src="2.png">
 			<img class="game" src="2.png">
 		</div>
 		<h2> GAMES </h2>
-		<img class="bg" src="1.png">
+		<img class="bg" id="player1Bg" src="1.png">
 	</div>
+	
 	<div class="right">
-		<h1> NAME </h1>
-		<h2 class="score"> 3 </h2>
+		<h1 id="player2Name"> NAME </h1>
+		<h2 id="player2Score" class="score"> 3 </h2>
 		<h2> SCORE </h2>
-		<div class="games">
-			<img class="game" src="2.png">
+		<div id="player2Games" class="games">
+			<img class="game" src="2.png" onclick="changeIMG(this)">
 			<img class="game" src="2.png">
 			<img class="game" src="2.png">
 		</div>
 		<h2> GAMES </h2>
-		<img class="bg" src="1.png">
+		<img class="bg" id="player2Bg" src="1.png">
 	</div>
+	
 	<div class="screen">
+		<div class="controls">
+		<div class="player">
+			<select id="player1List" class="mySelect" size="8">
+				<option value="Игрок A">Игрок A</option>
+				<option value="Игрок B">Игрок B</option>
+				<option value="Игрок C">Игрок C</option>
+				<option value="Игрок D">Игрок D</option>
+			</select>
+			<input type="number" id="score1Input" placeholder="Счет 1" min="0">
+			<button onclick="updateNamesAndScores()">Обновить имена и счет</button>
+		</div>
+		
+		<div class="player">
+			<select id="player2List" class="mySelect" size="8">
+				<option value="Игрок A">Игрок A</option>
+				<option value="Игрок B">Игрок B</option>
+				<option value="Игрок C">Игрок C</option>
+				<option value="Игрок D">Игрок D</option>
+			</select>
+			<input type="number" id="score2Input" placeholder="Счет 2" min="0">
+			<button onclick="swapPlayers()">Поменять местами</button>
+		</div>
+		</div>
+	
 		<img class="bg" src="temp.jpg">
 	</div>
+	
 	<div class="footer">
 	<iframe src="https://challonge.com/ru/gy1wbcaa/module" width="1520" height="350" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
 	</div>
