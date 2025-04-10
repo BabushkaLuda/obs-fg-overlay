@@ -16,12 +16,12 @@
 		<h2 id="player1Score" class="score" contenteditable = "true"> 0 </h2>
 		<h2> SCORE </h2>
 		<div id="player1Games" class="games">
-			<img class="game" src="2.png">
-			<img class="game" src="2.png">
-			<img class="game" src="2.png">
+			<img class="game" src="bb.png">
+			<img class="game" src="ggst.png">
+			<img class="game" src="jojohftf.png">
 		</div>
 		<h2> GAMES </h2>
-		<img class="bg" id="player1Bg" src="1.png">
+		<!-- <img class="bg" id="player1Bg" src="1.png"> -->
 	</div>
 	
 	<div class="right">
@@ -29,12 +29,12 @@
 		<h2 id="player2Score" class="score" contenteditable = "true"> 3 </h2>
 		<h2> SCORE </h2>
 		<div id="player2Games" class="games">
-			<img class="game" src="2.png">
-			<img class="game" src="2.png">
-			<img class="game" src="2.png">
+			<img class="game" src="ggxrd.png">
+			<img class="game" src="sf3.png">
+			<img class="game" src="bb.png">
 		</div>
 		<h2> GAMES </h2>
-		<img class="bg" id="player2Bg" src="1.png">
+		<!-- <img class="bg" id="player2Bg" src="1.png"> -->
 	</div>
 	
 	<div class="screen">
@@ -63,9 +63,17 @@
 		<img class="bg" src="temp.jpg">
 	</div>
 	<div class="footer">
-	<iframe src="https://challonge.com/ru/gy1wbcaa/module" width="1520" height="350" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+	<iframe src="https://challonge.com/ru/gy1wbcaa/module" width="1520" height="345" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
 	</div>
 </div>
+
+<script>
+document.querySelectorAll('.game').forEach(img => {
+	img.addEventListener('click', function() {
+	this.classList.toggle('filtered');
+	});
+});
+</script>
 
 </body>
 </html>

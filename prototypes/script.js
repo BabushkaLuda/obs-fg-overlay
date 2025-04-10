@@ -1,14 +1,13 @@
-
 function updateNamesAndImgs() {
 	const player1Name = document.getElementById('player1List').value;
 	const player2Name = document.getElementById('player2List').value;
-	const player1Bg = document.getElementById('player1Bg');
-	const player2Bg = document.getElementById('player2Bg');
+	// const player1Bg = document.getElementById('player1Bg');
+	// const player2Bg = document.getElementById('player2Bg');
 
 	if (player1Name) document.getElementById('player1Name').innerText = player1Name;
 	if (player2Name) document.getElementById('player2Name').innerText = player2Name;
-	if (player1Bg) document.getElementById('player1Bg').src = player1Name.toLowerCase() + ".png";
-	if (player2Bg) document.getElementById('player2Bg').src = player2Name.toLowerCase() + ".png";
+	// if (player1Bg) document.getElementById('player1Bg').src = player1Name.toLowerCase() + ".png";
+	// if (player2Bg) document.getElementById('player2Bg').src = player2Name.toLowerCase() + ".png";
 }
 
 function swapPlayers() {
@@ -18,23 +17,23 @@ function swapPlayers() {
 	const player2NameL = document.getElementById('player2List');
 	const player1Score = document.getElementById('player1Score');
 	const player2Score = document.getElementById('player2Score');
-	const player1Bg = document.getElementById('player1Bg');
-	const player2Bg = document.getElementById('player2Bg');
+	// const player1Bg = document.getElementById('player1Bg');
+	// const player2Bg = document.getElementById('player2Bg');
 
 	const tempName = player1Name.innerText;
 	const tempScore = player1Score.innerText;
-	const tempBg = player1Bg.src;
+	// const tempBg = player1Bg.src;
 	const tempList = player1NameL.value;
 
 	player1Name.innerText = player2Name.innerText;
 	player1Score.innerText = player2Score.innerText;
 	player1NameL.value = player2NameL.value;
-	player1Bg.src = player2Bg.src;
+	// player1Bg.src = player2Bg.src;
 
 	player2Name.innerText = tempName;
 	player2Score.innerText = tempScore;
 	player2NameL.value = tempList;
-	player2Bg.src = tempBg;
+	// player2Bg.src = tempBg;
 }
 	
 	
