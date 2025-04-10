@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фото рамка</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+        
+        .frame {
+            width: 1920px;
+            height: 1080px;
+            display: grid;
+            grid-template-columns: 200px auto 200px;
+            grid-template-rows: 112.5px auto 112.5px;
+            position: relative;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .corner {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            z-index: 2;
+        }
+        
+        .top-left {
+            top: 0;
+            left: 0;
+            clip-path: polygon(0 0, 200px 112.5px, 0 200px);
+			background-color: blue;
+        }
+        
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+            clip-path: polygon(200px 200px, 0 87.5px, 200px 0);
+			background-color: red;
+        }
+        
+        .border {
+            background-color: #333;
+        }
+        
+        .top {
+            grid-column: 1 / 4;
+            grid-row: 1;
+			background-color: red;
+        }
+        
+        .bottom {
+            grid-column: 1 / 4;
+            grid-row: 3;
+			background-color: blue;
+        }
+        
+        .left {
+            grid-column: 1;
+            grid-row: 2;
+			background-color: blue;
+        }
+        
+        .right {
+            grid-column: 3;
+            grid-row: 2;
+			background-color: red;
+        }
+        
+        .center {
+            grid-column: 2;
+            grid-row: 2;
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="frame">
+        <div class="corner top-left"></div>
+        <div class="corner bottom-right"></div>
+        
+        <div class="border top"></div>
+        <div class="border bottom"></div>
+        <div class="border left"></div>
+        <div class="border right"></div>
+        
+        <div class="center">
+            Центральная область (1520px × 885px)
+        </div>
+    </div>
+</body>
+</html>
