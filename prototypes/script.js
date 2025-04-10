@@ -1,3 +1,4 @@
+
 function updateNamesAndScores() {
 	const player1Name = document.getElementById('player1List').value;
 	const player2Name = document.getElementById('player2List').value;
