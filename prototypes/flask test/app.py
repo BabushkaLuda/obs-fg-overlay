@@ -23,7 +23,7 @@ def index():
             player2_name = request.form.get('currentP1')
             selected_players['first'] = next(p for p in players if p['name'] == player1_name)
             selected_players['second'] = next(p for p in players if p['name'] == player2_name)
-    return render_template('1.html', players=players, first_player=selected_players['first'], second_player=selected_players['second'])
+    return render_template('overlay.html', players=players, first_player=selected_players['first'], second_player=selected_players['second'], title="AdachiOverlay")
     
 if __name__ == '__main__':
     app.run(debug=True)

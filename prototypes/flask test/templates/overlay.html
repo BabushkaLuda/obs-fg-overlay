@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{title}}</title>
+	<link rel="icon" type="image/x-icon" href="static/favicon.ico">
 	<style>
 	
 		@font-face {
@@ -139,6 +140,10 @@
 			caret-color: transparent;
 		}
 		
+		::selection {
+			background: rgba(255, 255, 255, 0);
+		}
+		
 		.filtered {
 			filter: grayscale(100%) opacity(0.25);
 		}
@@ -200,7 +205,7 @@
 			
 		</div>
 		
-		<div class="left"><h1 class="playerScore" id="P1S" contenteditable> 0 </h1></div>
+		<div class="left"><h1  class="playerScore" id="P1S" contenteditable> 0 </h1></div>
 		<div class="right"><h1 class="playerScore" id="P2S" contenteditable> 0 </h1></div>
 		
 		<div class="center">
@@ -226,7 +231,6 @@
 				<div class="panel flex-column-center">
 				<input type="submit" name="action" value="Set Players">
 				<input type="submit" name="action" value="Swap Players">
-				<button value="Swap Score"> <button>
 				
 				<input type="hidden" name="currentP1" value="{{first_player.name}}">
 				<input type="hidden" name="currentP2" value="{{second_player.name}}">
