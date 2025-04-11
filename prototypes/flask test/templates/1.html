@@ -6,9 +6,14 @@
 	<title>{{title}}</title>
 	<style>
 	
-		@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
-		@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
-		
+		@font-face {
+			font-family: 'Score';
+			src: url('/static/fonts/Black_Ops_One/BlackOpsOne-Regular.ttf') format('truetype');
+		}
+		@font-face {
+			font-family: 'Name';
+			src: url('/static/fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+		}
 		body {
 			margin: 0;
 			padding: 0;
@@ -98,7 +103,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			font-size: 24px;
+			font-size: 30px;
 			color: #666;
 		}
 		
@@ -106,7 +111,7 @@
 			max-width: 12.5em;
 			max-height: 100%;
 			margin: auto auto auto 0;
-			font-family: JetBrains Mono, monospace;
+			font-family: Name, monospace;
 			font-weight: 150;
 			font-size: 75px;
 			text-transform: uppercase;
@@ -120,7 +125,7 @@
 		
 		.playerScore {
 			margin: auto auto;
-			font-family: "Black Ops One", system-ui;
+			font-family: Score, system-ui;
 			font-size: 192px;
 		}
 		.gameIcon {
@@ -137,6 +142,40 @@
 		.filtered {
 			filter: grayscale(100%) opacity(0.25);
 		}
+		
+		form {
+			width: 100%;
+			height: 95%;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		
+		input[type="submit"] {
+			width: 100%;
+			height: 20%;
+			font-size: 100%;
+		}
+		
+		.mySelect {
+			font-size: 50px;
+			max-width: 100%;
+			overflow-x: hidden;
+		}
+		
+		.panel {
+			text-align: center;
+			width: 30%;
+			margin: 10px 10px;
+		}
+		
+		.flex-column-center {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		
 	</style>
 </head>
 <body>
@@ -145,24 +184,54 @@
 		<div class="corner bottom-right"></div>
 		
 		<div class="top">
-			<h1 class="playerName" id="P2N">Number1RamlethalFan</h1>
-			<img class="gameIcon" src="bb.png">
-			<img class="gameIcon" src="ggst.png">
-			<img class="gameIcon" src="jojohftf.png">
+			<h1 class="playerName" id="P2N">{{first_player.name}}</h1>
+			
+			{% for game in first_player.games %}
+			<img class="gameIcon" src="/static/game_images/{{ game }}">
+			{% endfor %}
+			
 		</div>
 		
 		<div class="bottom">
-			<h1 class="playerName" id="P1N">Edgarchavyy</h1>
-			<img class="gameIcon" src="ggxrd.png">
-			<img class="gameIcon" src="sf3.png">
-			<img class="gameIcon" src="bb.png">
+			<h1 class="playerName" id="P1N">{{second_player.name}}</h1>
+			{% for game in second_player.games %}
+			<img class="gameIcon" src="/static/game_images/{{ game }}">
+			{% endfor %}
+			
 		</div>
 		
 		<div class="left"><h1 class="playerScore" id="P1S" contenteditable> 0 </h1></div>
 		<div class="right"><h1 class="playerScore" id="P2S" contenteditable> 0 </h1></div>
 		
 		<div class="center">
-			Центральная область (1536px × 864px)
+			<form method="POST">
+			
+				<div class="panel">
+					<h1>First Player</h1>
+					<select name="player1_name" class="mySelect" size="8">
+					{% for player in players %}
+						<option value="{{ player.name }}" selected="selected">{{ player.name }}</option>
+					{% endfor %}
+					</select>
+				</div>
+				
+				<div class="panel">
+					<h1>Second Player</h1>
+					<select name="player2_name" class="mySelect" size="8">
+					{% for player in players %}
+						<option value="{{ player.name }}" selected="selected">{{ player.name }}</option>
+					{% endfor %}
+					</select>
+				</div>
+				<div class="panel flex-column-center">
+				<input type="submit" name="action" value="Set Players">
+				<input type="submit" name="action" value="Swap Players">
+				<button value="Swap Score"> <button>
+				
+				<input type="hidden" name="currentP1" value="{{first_player.name}}">
+				<input type="hidden" name="currentP2" value="{{second_player.name}}">
+				</div>
+			</form>
 		</div>
 	</div>
 </body>
